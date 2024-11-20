@@ -345,6 +345,12 @@ function updateUIDType(uidtype) {
 function updateConfig(data, options) {
   if (data.product_name) _('product_name').textContent = data.product_name;
   if (data.reg_domain) _('reg_domain').textContent = data.reg_domain;
+  if (data.reg_domain2) {
+     _('reg_domain2').textContent = data.reg_domain2;
+     _('reg_domain2').style.display = "inline"; // Показываем, если есть текст
+	} else {
+    _('reg_domain2').style.display = "none";
+  }
   if (data.uid) {
     _('uid').value = data.uid.toString();
     originalUID = data.uid;
